@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.Data.SqlClient;
+using Microsoft.SqlServer.Dac;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 
@@ -8,22 +9,21 @@ namespace TestProject1.Fixtures
 {
     public class DatabaseFixture : IDisposable
     {
-        public readonly string DatabaseName = "Demo";
+        public readonly string DatabaseName = "Test";
         SqlConnection conn = new SqlConnection(@"Data Source=SA-PC120;Integrated Security=True;TrustServerCertificate=true");
         public DatabaseFixture()
         {
-            Console.WriteLine("HELLOOO");
-            //conn.Open();
-            //string create_script = "CREATE DATABASE " + DatabaseName;
-            //SqlCommand cmd = new SqlCommand(create_script, conn);
-            //cmd.ExecuteNonQuery();
-            //conn.ChangeDatabase(DatabaseName);
-            //Server server = new Server(new ServerConnection(conn));
-            //string script = File.ReadAllText(@"script.sql");
-            //server.ConnectionContext.ExecuteNonQuery(script);
-            //server = new Server(new ServerConnection(conn));
-            //script = File.ReadAllText(@"data-script.sql");
-            //server.ConnectionContext.ExecuteNonQuery(script);
+            //    var instance = new DacServices("Data Source=SA-PC120;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False");
+            //    using (var dacpac = DacPackage.Load("Test_.Database.dacpac"))
+            //    {
+            //        instance.Deploy(dacpac, DatabaseName,upgradeExisting: true);
+            //    }
+            //    conn.Open();
+            //    conn.ChangeDatabase(DatabaseName);
+            //    string i = conn.ToString();
+            //    Server server = new Server(new ServerConnection(conn));
+            //    string script = File.ReadAllText(@"db_scripts/data-script.sql");
+            //    server.ConnectionContext.ExecuteNonQuery(script);
             //conn.Close();
         }
 

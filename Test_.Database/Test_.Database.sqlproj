@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Sdk Name="Microsoft.Build.Sql" Version="0.1.3-preview" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Test_.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{dffd06b9-296c-4a47-baee-0d186312f99c}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Test_.Database</RootNamespace>
+    <AssemblyName>Test_.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>C:\Users\AnasElDaou\source\repos\TestingProject\Test_.Database\bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="LAF\" />
+    <Folder Include="LAF\Tables\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="LAF\Tables\category.sql" />
+    <Build Include="LAF\Tables\city.sql" />
+    <Build Include="LAF\Tables\color.sql" />
+    <Build Include="LAF\Tables\country.sql" />
+    <Build Include="LAF\Tables\department.sql" />
+    <Build Include="LAF\Tables\department_type.sql" />
+    <Build Include="LAF\Tables\destinations.sql" />
+    <Build Include="LAF\Tables\district.sql" />
+    <Build Include="LAF\Tables\event.sql" />
+    <Build Include="LAF\Tables\fire_arm.sql" />
+    <Build Include="LAF\Tables\fire_arm_type.sql" />
+    <Build Include="LAF\Tables\fire_arms_owner.sql" />
+    <Build Include="LAF\Tables\manufacturer.sql" />
+    <Build Include="LAF\Tables\manufacturer_category.sql" />
+    <Build Include="LAF\Tables\nationality.sql" />
+    <Build Include="LAF\Tables\notification.sql" />
+    <Build Include="LAF\Tables\object.sql" />
+    <Build Include="LAF\Tables\object_property_value.sql" />
+    <Build Include="LAF\Tables\object_type.sql" />
+    <Build Include="LAF\Tables\object_type_properties.sql" />
+    <Build Include="LAF\Tables\permission.sql" />
+    <Build Include="LAF\Tables\person.sql" />
+    <Build Include="LAF\Tables\place.sql" />
+    <Build Include="LAF\Tables\place_type.sql" />
+    <Build Include="LAF\Tables\province.sql" />
+    <Build Include="LAF\Tables\registration_history.sql" />
+    <Build Include="LAF\Tables\relationship.sql" />
+    <Build Include="LAF\Tables\role.sql" />
+    <Build Include="LAF\Tables\unit_category.sql" />
+    <Build Include="LAF\Tables\unit_conversion.sql" />
+    <Build Include="LAF\Tables\units.sql" />
+    <Build Include="LAF\Tables\user.sql" />
+    <Build Include="LAF\Tables\user_activities.sql" />
+    <Build Include="LAF\Tables\user_role.sql" />
+    <Build Include="LAF\Tables\vehicle.sql" />
+    <Build Include="LAF\Tables\vehicle_owner.sql" />
+    <Build Include="LAF\Tables\wasika.sql" />
+    <Build Include="LAF\Tables\wasika_fire_arms.sql" />
+    <Build Include="LAF\Tables\wasika_object.sql" />
+    <Build Include="LAF\Tables\wasika_people.sql" />
+    <Build Include="LAF\Tables\wasika_places.sql" />
+    <Build Include="LAF\Tables\wasika_type.sql" />
+    <Build Include="LAF\Tables\wasika_vehicle.sql" />
+    <Build Include="LAF\Tables\whistory.sql" />
+    <Build Include="LAF\Tables\wstatus.sql" />
+    <Build Include="Security\LAF.sql" />
+  </ItemGroup>
+</Project>

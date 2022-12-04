@@ -1,0 +1,5 @@
+﻿CREATE TABLE [LAF].[event] (
+    [id] UNIQUEIDENTIFIER NOT NULL,
+    CONSTRAINT [PK_event] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
