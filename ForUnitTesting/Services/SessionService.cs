@@ -24,5 +24,11 @@ namespace ForUnitTesting.Services
         {
             return "realUserName";
         }
+
+        public string GetPreferredLanguage()
+        {
+            string lan = _contextAccessor.HttpContext.Request.Headers.AcceptLanguage;
+            return lan;
+        }
     }
 }

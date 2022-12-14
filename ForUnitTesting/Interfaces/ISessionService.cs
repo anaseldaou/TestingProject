@@ -5,5 +5,6 @@
         string GetSessionId();
         string GetUserName();
         string GetPassword();
+        string GetPreferredLanguage();
     }
 }

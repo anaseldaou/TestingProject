@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using AutoMapper;
 using ForUnitTesting.Entities;
+using ForUnitTesting.Interfaces;
 
 namespace ForUnitTesting.Services
 {
@@ -56,7 +57,8 @@ namespace ForUnitTesting.Services
 
         public Person Map(PersonDTO person)
         {
-            var i = _mapper.Map<PersonDTO, Person>(person);
+            Person destination = new Person();
+            var i = _mapper.Map(person, destination);
             return i;
         }
     }
@@ -73,15 +75,17 @@ namespace ForUnitTesting.Services
         private IMapper _mapper;
         string connString;
         SqlConnection conn;
+        private ISessionService _sessionService;
         public string _Code = "hello";
 
 
-        public WeatherService(IConfiguration conf, IMapper mapper)
+        public WeatherService(IConfiguration conf, IMapper mapper, ISessionService sessionService)
         {
             _conf = conf;
             _mapper = mapper;
             connString = _conf.GetConnectionString("LAF");
             conn = new SqlConnection(connString);
+            _sessionService = sessionService;
         }
 
         public string Test()
@@ -118,7 +122,12 @@ namespace ForUnitTesting.Services
 
         public Person Map(PersonDTO person)
         {
-            var i = _mapper.Map<PersonDTO, Person>(person);
+            Person destination = new Person()
+            {
+                Name = "source___"
+            };
+            var lan = _sessionService.GetPreferredLanguage();
+            var i = _mapper.Map(person, destination);
             return i;
         }
     }
